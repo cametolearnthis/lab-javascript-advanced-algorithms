@@ -5,19 +5,11 @@ class Queue {
   }
 
   canEnqueue() {
-    if (this.queueControl.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.queueControl.length === 0 ? true : false; 
   }
 
   isEmpty() {
-    if (this.queueControl.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.queueControl.length === 0 ? true : false;
   }
 
   enqueue(item) {

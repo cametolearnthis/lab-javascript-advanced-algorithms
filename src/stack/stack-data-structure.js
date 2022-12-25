@@ -5,35 +5,27 @@ class Stack {
   }
 
   canPush() {
-    if(this.stackControl.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.stackControl.length === 0 ? true : false; 
   }
 
   isEmpty() {
-    if(this.stackControl.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.stackControl.length === 0 ? true : false;
   }
 
   push(item) {
-    if (this.canPush()) {
-      this.stackControl.push(item);
-    } else {
+    if (!this.canPush()) {
       throw new Error('STACK_OVERFLOW');
+    } else {
+      this.stackControl.push(item);
     }
     return this.stackControl;
   }
 
   pop() {
-    if(this.isEmpty()) {
-      throw new Error('STACK_UNDERFLOW');
-    } else {
+    if(!this.isEmpty()) {
       this.stackControl.pop();
+    } else {
+      throw new Error('STACK_UNDERFLOW');
     }
       return this.stackControl.pop();
   }
